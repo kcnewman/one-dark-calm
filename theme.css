@@ -466,14 +466,28 @@ body {
     .markdown-preview-view.is-readable-line-width .markdown-preview-sizer > .el-table,
     .markdown-source-view.mod-cm6.is-readable-line-width .cm-content > .cm-table-widget {
       --calm-table-pane-width: max(1px, calc(100cqi - 4rem));
-      width: max(100%, var(--calm-table-pane-width));
-      max-width: none;
-      margin-inline: min(0px, calc((100% - var(--calm-table-pane-width)) / 2)) !important;
+      /* Grow only as far as the table needs, then scroll at pane width.
+         Center the actual block, not an oversized left-aligned wrapper.
+         Translate only this outer block; leave cell-editor geometry alone. */
+      width: max-content;
+      min-width: 100%;
+      max-width: var(--calm-table-pane-width);
+      margin-inline: 0 !important;
+      position: relative;
+      left: 50%;
+      translate: -50% 0;
     }
 
     /* Reading view's container already excludes its native file padding. */
     .markdown-preview-view.is-readable-line-width .markdown-preview-sizer > .el-table {
       --calm-table-pane-width: 100cqi;
+    }
+
+    .markdown-preview-view.is-readable-line-width .markdown-preview-sizer > .el-table:dir(rtl),
+    .markdown-source-view.mod-cm6.is-readable-line-width .cm-content > .cm-table-widget:dir(rtl) {
+      left: auto;
+      right: 50%;
+      translate: 50% 0;
     }
   }
 }

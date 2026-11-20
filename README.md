@@ -8,7 +8,7 @@ A personal Obsidian theme blending One Dark Pro colors, a restrained Zed-inspire
 - Embedded iA Writer Duo S in regular, italic, bold, and bold italic.
 - Warm inline-code chips and distinct blue-grey code blocks.
 - Clear table headers, subtle alternating rows, and comfortable cell padding.
-- Top-level tables extend beyond the readable text column toward the edges of their own note pane. Extra-wide tables retain horizontal scrolling; paragraphs keep their readable width.
+- Top-level tables grow beyond the readable text column only when needed, staying centered on that column. Small tables keep their normal alignment, and extra-wide tables retain horizontal scrolling. Paragraphs keep their readable width.
 - Compact Properties on desktop: type, status, and tags stay visible. Hover the section or focus a field to reveal everything. Touch devices, printing, and sidebar property panels keep all fields visible.
 - Grey off switches and blue on switches.
 
@@ -26,7 +26,7 @@ The theme supplies its own note font. If you have configured a custom text font 
 
 Wide tables apply to top-level Markdown tables in Reading view and Live Preview. Tables inside callouts, lists, and embedded notes keep their containing layout. A small gutter remains for scrolling and editing controls. This theme does not modify note content, force smooth scrolling, or install a heading navigation plugin.
 
-Layout checks use browser fixtures representing Obsidian's table containers. Native Obsidian interaction and performance still need checking in your own vault, particularly when other plugins or snippets modify editor layout. No scrolling performance gain is claimed.
+Layout checks use browser fixtures with the installed Obsidian 1.15.1 application stylesheet. Version 1.1.1 fixes the left-shift regression in 1.1.0 and passes narrow/wide-pane checks for small, medium, and overflowing tables in Reading view and Live Preview layouts, including cell focus, editing, scrolling, and right-to-left centering. Native Obsidian interaction and performance still need checking in your own vault, particularly when other plugins or snippets modify editor layout. No scrolling performance gain is claimed.
 
 ## Credits and licenses
 
